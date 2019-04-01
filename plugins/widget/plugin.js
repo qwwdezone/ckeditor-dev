@@ -459,7 +459,7 @@
 				var parents = node.getParents().reverse(),
 					done = false,
 					nonEditableParents = CKEDITOR.tools.array.filter( parents, function( node ) {
-							if ( !done && node.type == CKEDITOR.NODE_ELEMENT && node.getAttribute( 'contentEditable' ) == 'false' && !node.data( 'cke-editable' ) ) {
+							if ( !done && node.type == CKEDITOR.NODE_ELEMENT && node.isReadOnly() ) {
 								return true;
 							}
 
